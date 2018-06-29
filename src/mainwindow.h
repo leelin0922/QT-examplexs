@@ -13,7 +13,7 @@
 #define		SBC7112_RTC
 #define		SBC7112_BACKLIGHT
 #define		SBC7112_EEPROM
-#define		SBC7112_NETWORK
+//#define		SBC7112_NETWORK
 #define		SBC7112_PING
 #define		SBC7112_USB
 #define		SBC7112_CAN
