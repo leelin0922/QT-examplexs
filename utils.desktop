@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=QT5 utils
+Exec=/usr/bin/qt-test-utils
+Icon=utils.png
+Terminal=false
+Type=Application
+X-MB-SingleInstance=true
+Comment=QT5 utils
+StartupNotify=false
