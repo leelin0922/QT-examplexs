@@ -8,10 +8,10 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = utils
-target.files = utils
-target.path = /usr/bin/
-INSTALLS += target
+TARGET = qt-test-utils
+#target.files = test
+#target.path = /usr/bin/
+#INSTALLS += target
 
 TEMPLATE = app
 
