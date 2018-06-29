@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = utils
 target.files = utils
-target.path = /usr/share/
+target.path = /usr/bin/
 INSTALLS += target
 
 TEMPLATE = app
@@ -102,3 +102,9 @@ FORMS    += mainwindow.ui \
     network/network.ui
 
 OTHER_FILES +=
+
+# deployment on Linux
+unix {
+    target.path = /usr/bin/
+    INSTALLS += target \
+}
