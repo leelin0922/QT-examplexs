@@ -42,8 +42,6 @@ int i2c_byte_write(int fd, unsigned char addr, unsigned char reg, unsigned char 
     outbuf[1] = val;
 
     ret = ioctl(fd, I2C_RDWR, (unsigned long)&packets);   //读出来
-    if (ret < 0)
-        ret = -1;
 
 	return ret;
 }
@@ -109,11 +107,8 @@ int i2c_byte_read(int fd, unsigned char addr, unsigned char *val)
     messages.buf = val;             //读取的数据保存在val
 
     ret = ioctl (fd, I2C_RDWR, (unsigned long)&packets);  //发送数据帧
-    if (ret < 0)
-        ret = -1;
 
 	return ret;
-
 }
 //从指定地址读取1个或多个字节
 int i2c_nbytes_read(int fd, unsigned char addr, unsigned char reg, unsigned char *val, int len)
@@ -139,8 +134,6 @@ int i2c_nbytes_read(int fd, unsigned char addr, unsigned char reg, unsigned char
     packets.msgs = messages;
 
     ret = ioctl(fd, I2C_RDWR, (unsigned long)&packets);//读出来
-    if (ret < 0)
-        ret = -1;
 
 	return ret;
 }

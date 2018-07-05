@@ -137,7 +137,7 @@ void Eeprom::on_pushButton_read_clicked()
 
     ret = i2c_nbytes_read(fd, addr, reg, recvBuf, len);
 
-    if (ret == -1) {
+    if (ret < 0) {
         QMessageBox::information(this, tr("warning"), "read error!");
     }
     else
@@ -216,16 +216,16 @@ void Eeprom::on_pushButton_write_clicked()
             ret = i2c_byte_write(fd, addr, reg + i, 0);
             usleep(5000);
         }
-        if (ret == -1) {
+        if (ret < 0) {
             wrong_flag = true;
-            printf("error , index: %d\n", i);
+            printf("error(%d) , index: %d\n", ret, i);
         }
     }
-        if (wrong_flag) {
-            QMessageBox::information(this, tr("warning"), "write error!");
-        }
-        else
-        {
-            QMessageBox::information(this, tr("info"),"write success!");
-        }
+    if (wrong_flag) {
+        QMessageBox::information(this, tr("warning"), "write error!");
+    }
+    else
+    {
+        QMessageBox::information(this, tr("info"),"write success!");
+    }
 }

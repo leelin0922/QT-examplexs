@@ -18,6 +18,7 @@ public:
 private:
     Ui::Backlight *ui;
     int fd;
+    int pwm_chno;
 
 private slots:
     void sliderchanged(int v);
